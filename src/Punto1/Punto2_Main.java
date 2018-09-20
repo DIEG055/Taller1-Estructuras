@@ -5,11 +5,27 @@
  */
 package Punto1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Juan Diego Medina
  */
 public class Punto2_Main {
+
+    public static int randomnumber(int max) {
+        return (int) (Math.random() * max);
+    }
+
+    public static int[] randomarray(int size) {
+        int[] x = new int[size];
+        //max number
+        int max = 1000000;
+        for (int i = 0; i < size; i++) {
+            x[i] = randomnumber(max);
+        }
+        return x;
+    }
 
     //lineal search
     public static int linalsearch(int n, int[] x) {
@@ -53,7 +69,7 @@ public class Punto2_Main {
                 larray[i] = x[i];
             }
             for (i = lelements; i < x.length; i++) {
-                rarray[i-lelements] = x[i];
+                rarray[i - lelements] = x[i];
             }
             larray = mergesort(larray);
             rarray = mergesort(rarray);
@@ -86,10 +102,12 @@ public class Punto2_Main {
     }
 
     public static void main(String[] args) {
-        int[] x = {2, 18, 1, 78, 4, 6, 90, 0, 8, 6};
+        Scanner entrada = new Scanner(System.in);
+        int size=entrada.nextInt();
+        int[] x = randomarray(size);
         x = mergesort(x);
         for (int i = 0; i < x.length; i++) {
-            System.out.println(x[i]);
+            System.out.print((x[i]) + " ");
         }
     }
 }
