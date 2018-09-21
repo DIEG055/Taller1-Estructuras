@@ -6,6 +6,7 @@
 package Punto1;
 
 import static java.lang.Math.pow;
+import java.math.BigInteger;
 import java.util.Hashtable;
 import java.util.Scanner;
 
@@ -15,11 +16,11 @@ import java.util.Scanner;
  */
 public class Punto2_Main {
 
-    public static int randomnumber(int max) {
+    public static Integer randomnumber(int max) {
         return (int) (Math.random() * max);
     }
 
-    public static int[] randomarray(int size, int max) {
+    public static int[] randomarray(int size,Integer max) {
         int[] x = new int[size];
         //max number
         for (int i = 0; i < size; i++) {
@@ -105,33 +106,36 @@ public class Punto2_Main {
     public static void main(String[] args) {
 //        Scanner entrada = new Scanner(System.in);
 //        int size = entrada.nextInt();
-        Hashtable<String, Integer> resultados = new Hashtable<String, Integer>();
+//        Hashtable<String, Integer> resultados = new Hashtable<String, Integer>();
         //tiempo
         long inicio = 0;
         long fin = 0;
         long prom = 0;
-        int i = 3;
+        long prom1 = 0;
+        int i = 8;
         while (prom <= 180000) {
-            for (int j = 1; j < 10; j++) {
+            for (int j = 2; j < 10; j++) {
                 int size = ((int) pow(10, i)) * j;
-                int[] x = randomarray(size, size);
+                int[] x = randomarray(size, (int) pow(10, i-1));
                 System.out.print((size) + " ");
-                prom=0;
+                prom = 0;
                 for (int k = 0; k < 7; k++) {
 
                     inicio = System.currentTimeMillis();
-                    int[] y = bubblesort(x);
+                    int[] y = mergesort(x);
                     fin = System.currentTimeMillis();
                     prom += (fin - inicio);
 
                 }
+
                 prom = prom / 7;
+
                 if (prom >= 180000) {
                     System.out.println("TIEMPO");
                 }
-
-                System.out.print(prom);
+                System.out.print((prom));
                 System.out.println("");
+
             }
             i++;
         }
