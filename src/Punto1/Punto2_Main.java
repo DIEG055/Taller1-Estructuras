@@ -5,6 +5,8 @@
  */
 package Punto1;
 
+import static java.lang.Math.pow;
+import java.util.Hashtable;
 import java.util.Scanner;
 
 /**
@@ -17,10 +19,9 @@ public class Punto2_Main {
         return (int) (Math.random() * max);
     }
 
-    public static int[] randomarray(int size) {
+    public static int[] randomarray(int size, int max) {
         int[] x = new int[size];
         //max number
-        int max = 1000000;
         for (int i = 0; i < size; i++) {
             x[i] = randomnumber(max);
         }
@@ -28,7 +29,7 @@ public class Punto2_Main {
     }
 
     //lineal search
-    public static int linalsearch(int n, int[] x) {
+    public static int linealsearch(int n, int[] x) {
         int aux = -1;
         for (int i = 0; i < x.length; i++) {
             if (n == x[i]) {
@@ -102,12 +103,38 @@ public class Punto2_Main {
     }
 
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        int size=entrada.nextInt();
-        int[] x = randomarray(size);
-        x = mergesort(x);
-        for (int i = 0; i < x.length; i++) {
-            System.out.print((x[i]) + " ");
+//        Scanner entrada = new Scanner(System.in);
+//        int size = entrada.nextInt();
+        Hashtable<String, Integer> resultados = new Hashtable<String, Integer>();
+        //tiempo
+        long inicio = 0;
+        long fin = 0;
+        long prom = 0;
+        int i = 3;
+        while (prom <= 180000) {
+            for (int j = 1; j < 10; j++) {
+                int size = ((int) pow(10, i)) * j;
+                int[] x = randomarray(size, size);
+                System.out.print((size) + " ");
+                prom=0;
+                for (int k = 0; k < 7; k++) {
+
+                    inicio = System.currentTimeMillis();
+                    int[] y = bubblesort(x);
+                    fin = System.currentTimeMillis();
+                    prom += (fin - inicio);
+
+                }
+                prom = prom / 7;
+                if (prom >= 180000) {
+                    System.out.println("TIEMPO");
+                }
+
+                System.out.print(prom);
+                System.out.println("");
+            }
+            i++;
         }
+
     }
 }
