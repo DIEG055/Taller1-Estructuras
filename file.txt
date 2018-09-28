@@ -9,22 +9,22 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class InfixPostfix4 {
-  public static void main(String[] args) {
+  public static void main(String[ args) {
 
     //Entrada de datos
-    System.out.println("*Escribe una expresión algebraica: ");
+    System.out.println("*Escribe una expresiï¿½n algebraica: ");
     Scanner leer = new Scanner(System.in);
 
     //Depurar la expresion algebraica
     String expr = depurar(leer.nextLine());
     String[] arrayInfix = expr.split(" ");
 
-    //Declaración de las pilas
+    //Declaraciï¿½n de las pilas
     Stack < String > E = new Stack < String > (); //Pila entrada
     Stack < String > P = new Stack < String > (); //Pila temporal para operadores
     Stack < String > S = new Stack < String > (); //Pila salida
 
-    //Añadir la array a la Pila de entrada (E)
+    //Aï¿½adir la array a la Pila de entrada (E)
     for (int i = arrayInfix.length - 1; i >= 0; i--) {
       E.push(arrayInfix[i]);
     }
@@ -55,7 +55,7 @@ public class InfixPostfix4 {
         } 
       } 
 
-      //Eliminacion de `impurezas´ en la expresiones algebraicas
+      //Eliminacion de `impurezasï¿½ en la expresiones algebraicas
       String infix = expr.replace(" ", "");
       String postfix = S.toString().replaceAll("[\\]\\[,]", "");
 
@@ -64,12 +64,12 @@ public class InfixPostfix4 {
       System.out.println("Expresion Postfija: " + postfix);
 
     }catch(Exception ex){ 
-      System.out.println("Error en la expresión algebraica");
+      System.out.println("Error en la expresiï¿½n algebraica");
       System.err.println(ex);
     }
   } 
 
-  //Depurar expresión algebraica
+  //Depurar expresiï¿½n algebraica
   private static String depurar(String s) {
     s = s.replaceAll("\\s+", ""); //Elimina espacios en blanco
     s = "(" + s + ")";

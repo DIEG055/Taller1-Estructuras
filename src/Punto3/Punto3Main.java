@@ -58,7 +58,8 @@ public class Punto3Main {
         }
         auxStack.push(s);
         
-        
+     
+
         //Inivertimos el orden de la pila
         MyLinkedStack<String> auxStack2 = new MyLinkedStack<>();
         while(auxStack.top() != null){
@@ -103,6 +104,7 @@ public class Punto3Main {
         FileReader lector=new FileReader("file.txt");
         int linea=1;
         int codCaracter= lector.read();
+        
         
         while(codCaracter != -1){
             System.out.print((char)codCaracter);

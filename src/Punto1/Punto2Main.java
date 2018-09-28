@@ -1,35 +1,40 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Juan Diego Medina Naranjo   jmedinan@unal.edu.co
+// Camilo Andres Gil Ballen   cgilb@unal.edu.co
 package Punto1;
 
-import static Punto1.Punto2_Main.mergesort;
-import static Punto1.Punto2_Main.randomnumber;
 
-/**
- *
- * @author jccas
- */
 public class Punto2Main {
 
     public static void main(String args[]) {
-        int n = 10;
+        long inicio = 0;
+        long fin = 0;
+        int n = 10000;
         int[] searchArray = generateRandomArray(n, -n, n);
         int N = generateRandomInt(-n, n);
         //Start Time
+        inicio = System.currentTimeMillis();
         int index = linealSearch(searchArray, N);
+        fin = System.currentTimeMillis();
+        System.out.println("Lineal Search");
+        System.out.println("tam: " + (n) + "   " + "tiempo milisegundos: " + (fin - inicio));
         //End Time
 
         int[] bubbleArray = generateRandomArray(n, -n, n);
         //Start Time
+        inicio = System.currentTimeMillis();
         bubbleSort(bubbleArray);
+        fin = System.currentTimeMillis();
+        System.out.println("Bubblesort");
+        System.out.println("tam: " + (n) + "   " + "tiempo milisegundos: " + (fin - inicio));
         //End Time
 
         int[] mergeArray = generateRandomArray(n, -n, n);
         //Start Time
+        inicio = System.currentTimeMillis();
         mergeSort(mergeArray);
+        fin = System.currentTimeMillis();
+        System.out.println("MergeSort");
+        System.out.println("tam: " + (n) + "   " + "tiempo milisegundos: " + (fin - inicio));
         //End Time
 
     }
@@ -44,7 +49,7 @@ public class Punto2Main {
     }
 
     private static int generateRandomInt(int min, int max) {
-        return (int) (Math.random() * max) + min;
+        return (int) ((Math.random() * (max - min)) + min);
     }
 
     private static int linealSearch(int[] array, int N) {
@@ -70,8 +75,8 @@ public class Punto2Main {
         }
     }
 
-    private static void mergeSort(int[] array) {
-       // i --> arreglo original
+    private static int[] mergeSort(int[] array) {
+        // i --> arreglo original
         // j --> arreglo izquierdo
         // k --> arreglo derecho 
         int i, j, k;
@@ -87,8 +92,8 @@ public class Punto2Main {
             for (i = lelements; i < array.length; i++) {
                 rarray[i - lelements] = array[i];
             }
-            larray = mergesort(larray);
-            rarray = mergesort(rarray);
+            larray = mergeSort(larray);
+            rarray = mergeSort(rarray);
             i = 0;
             j = 0;
             k = 0;
@@ -114,6 +119,7 @@ public class Punto2Main {
                 i++;
             }
         }
+        return array;
     }
 
 }

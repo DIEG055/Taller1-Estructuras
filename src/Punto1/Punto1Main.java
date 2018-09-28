@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Juan Diego Medina Naranjo   jmedinan@unal.edu.co
+// Camilo Andres Gil Ballen   cgilb@unal.edu.co
 package Punto1;
 
 import java.util.Arrays;
 
-/**
- *
- * @author jccas
- */
 public class Punto1Main {
 
     public static void main(String args[]) {
@@ -24,8 +17,10 @@ public class Punto1Main {
         double[][] sum = new double[a.length][a.length];
         double[][] mult = new double[a.length][b.length];
         operationWithMatrix(a, b, sum, mult);
-        System.out.println("Suma: " + Arrays.toString(sum));
-        System.out.println("Multiplicación: " + Arrays.toString(mult));
+        System.out.println("Suma:");
+        print_matrix(sum);
+        System.out.println("Multiplicación:" );
+        print_matrix(mult);
         System.out.println("");
         System.out.println("********EJERCICIO 1c********");
         String reverse = reverseString("Estructuras de Datos");
@@ -39,15 +34,6 @@ public class Punto1Main {
 
 // Punto a------------------------------------------------------------------
 //Dado un número n mostrar en consola los números primos menores a n
-    private  static boolean[] crear_para_criba(int n) {
-        boolean[] x = new boolean[n + 1];
-        for (int i = 0; i <= n; i++) {
-            x[i] = true;
-        };
-        x[0] = false;
-        x[1] = false;
-        return x;
-    }
 
     private  static boolean[] tacha_multiplo(boolean[] x, int n, int p) {
         for (int i = 2 * p; i <= n; i += p) {
@@ -68,14 +54,16 @@ public class Punto1Main {
         }
     }
 
-    private  static boolean[] criba(boolean[] x, int n) {
-        return criba(x, n, 2);
-    }
-
     private  static void printLessThanNPrime(int n) {
-        boolean[]x=criba(crear_para_criba(n), n);
-        for (int i = 0; i < x.length; i++) {
-            if(x[i]){
+        boolean[] x = new boolean[n + 1];
+        for (int i = 0; i <= n; i++) {
+            x[i] = true;
+        };
+        x[0] = false;
+        x[1] = false;
+        boolean[]y=criba(x, n,2);
+        for (int i = 0; i < y.length; i++) {
+            if(y[i]){
                 System.out.print(i+" ");
             }
         }
@@ -97,6 +85,14 @@ public class Punto1Main {
                 }
                 mult[i][j] = aux;
             }
+        }
+    }
+    public static void print_matrix(double[][] x){
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x.length; j++) {
+                System.out.print(x[i][j] + " ");
+            }
+            System.out.println("");
         }
     }
 // Punto c----------------------------------------------------------------------
