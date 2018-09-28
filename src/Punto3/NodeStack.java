@@ -1,11 +1,11 @@
 package Punto3;
 
 
-public class Node<T>{
+public class NodeStack<T>{
     private T element; 
-    private Node<T> down;
+    private NodeStack<T> down;
     
-    public Node(T element, Node<T> downElement){
+    public NodeStack(T element, NodeStack<T> downElement){
         this.element=element;
         this.down=downElement;
     }
@@ -17,11 +17,11 @@ public class Node<T>{
     public void setElement(T element) {
         this.element = element;
     }
-    public Node<T> getDown() {
+    public NodeStack<T> getDown() {
         return down;
     }
     
-    public void setDown(Node<T> down) {
+    public void setDown(NodeStack<T> down) {
         this.down = down;
     }
     

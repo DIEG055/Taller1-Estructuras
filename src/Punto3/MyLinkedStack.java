@@ -1,6 +1,6 @@
 package Punto3;
 public class MyLinkedStack<T> extends AbstractStack<T>{
-    Node<T> top;
+    NodeStack<T> top;
 
     public MyLinkedStack(){
         this.top=null;
@@ -9,13 +9,13 @@ public class MyLinkedStack<T> extends AbstractStack<T>{
     
     @Override
     public void push(T element) {
-        Node<T> newNode= new Node(element, top);
+        NodeStack<T> newNode= new NodeStack(element, top);
         top=newNode;
     }
     
     @Override
     public int size(){
-        Node<T> auxNode = top;
+        NodeStack<T> auxNode = top;
         int aux=0;
         while(auxNode != null){
            aux++;
@@ -56,7 +56,7 @@ public class MyLinkedStack<T> extends AbstractStack<T>{
     
     @Override
     public void print() {
-       Node<T> auxNode = top;
+       NodeStack<T> auxNode = top;
        while(auxNode != null){
            System.out.println(auxNode.getElement().toString());
            auxNode = auxNode.getDown();
