@@ -1,4 +1,12 @@
 package Punto3;
+
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
+
+/*Esta interface permite la implementacion de una pila o Stack, en ella
+  encentran los metodos obligatorios correspondientes a una Stack   
+*/
+
 public interface Stack <T>{
     //Me devuleve el tamaño de mi pila
     int size();

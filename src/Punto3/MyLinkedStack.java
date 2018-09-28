@@ -1,18 +1,34 @@
 package Punto3;
-public class MyLinkedStack<T> extends AbstractStack<T>{
-    NodeStack<T> top;
 
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
+
+/*En esta clase realizamos la implemetacion de una Stack, a traves de nodos 
+  enlazados, para esto heradamos de la clase AbstractStack, la cual nos proporcionara
+  la implementacion de algunos metodos y nos obligara a implementar otros. 
+    
+  A continuacion se realiza una breve descripcion de la manera en que se implemento
+  cada metodo.
+*/
+
+
+public class MyLinkedStack<T> extends AbstractStack<T>{
+    private NodeStack<T> top; //Nos referencia el tope o cima de la Stack
+
+    //Constructor de nuestra Stack, siempre inicia vacio
     public MyLinkedStack(){
         this.top=null;
     }
     
     
+    //Implementacion del metodo push
     @Override
     public void push(T element) {
         NodeStack<T> newNode= new NodeStack(element, top);
         top=newNode;
     }
     
+    //Implementacion del metodo size, nos arroja el tamaño de la Stack
     @Override
     public int size(){
         NodeStack<T> auxNode = top;
@@ -24,6 +40,7 @@ public class MyLinkedStack<T> extends AbstractStack<T>{
         return aux;
     }
     
+    //Implementacion del metodo push
     @Override
     public T pop() {
         if(top==null){
@@ -36,7 +53,7 @@ public class MyLinkedStack<T> extends AbstractStack<T>{
         }
     }
 
-    
+    //Implementacion del metodo top
     @Override
     public T top() {
         if(top==null){
@@ -47,13 +64,13 @@ public class MyLinkedStack<T> extends AbstractStack<T>{
         }    
     }
     
-    
+    //Implementacion del metodo clear
     @Override
     public void clear() {
         top=null;
     }
 
-    
+    //Implementacion del metodo print
     @Override
     public void print() {
        NodeStack<T> auxNode = top;

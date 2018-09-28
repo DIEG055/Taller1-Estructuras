@@ -1,6 +1,15 @@
 package Punto3;
 
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
 
+/*Esta clase contiene la estrucutura de un de nodo de una pila o Stack,
+  su estructura esta conformanda por T element, y una referencia al nodo
+  que esta debajo de el o previo
+  
+  Ademas tiene un constructor simple y los respestivos getter y setter
+    
+*/
 public class NodeStack<T>{
     private T element; 
     private NodeStack<T> down;
