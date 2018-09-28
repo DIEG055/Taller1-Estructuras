@@ -1,10 +1,10 @@
 package Punto4;
 
-public class Node<T> {
+public class NodeQueue<T> {
     private T element;
-    private Node<T> next;
+    private NodeQueue<T> next;
 
-    public Node(T element, Node<T> next) {
+    public NodeQueue(T element, NodeQueue<T> next) {
         this.element = element;
         this.next = next;
     }
@@ -17,11 +17,11 @@ public class Node<T> {
         this.element = element;
     }
 
-    public Node<T> getNext() {
+    public NodeQueue<T> getNext() {
         return next;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(NodeQueue<T> next) {
         this.next = next;
     }
     

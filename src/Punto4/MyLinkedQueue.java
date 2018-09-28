@@ -1,8 +1,8 @@
 package Punto4;
 
 public class MyLinkedQueue<T> extends AbstractQueue<T>{
-    private Node<T> front;
-    private Node<T> back;
+    private NodeQueue<T> front;
+    private NodeQueue<T> back;
 
     
     
@@ -11,19 +11,19 @@ public class MyLinkedQueue<T> extends AbstractQueue<T>{
         back=null;
     }
 
-    public Node<T> getFront() {
+    public NodeQueue<T> getFront() {
         return front;
     }
 
-    public void setFront(Node<T> front) {
+    public void setFront(NodeQueue<T> front) {
         this.front = front;
     }
 
-    public Node<T> getBack() {
+    public NodeQueue<T> getBack() {
         return back;
     }
 
-    public void setBack(Node<T> back) {
+    public void setBack(NodeQueue<T> back) {
         this.back = back;
     }
     
@@ -32,7 +32,7 @@ public class MyLinkedQueue<T> extends AbstractQueue<T>{
     @Override
     public int size() {
         int contador = 0;
-        Node<T> nodeAux=front;
+        NodeQueue<T> nodeAux=front;
         while(nodeAux != null){
             contador++;
             nodeAux = nodeAux.getNext();
@@ -42,7 +42,7 @@ public class MyLinkedQueue<T> extends AbstractQueue<T>{
 
     @Override
     public void enqueue(T element) {
-        Node<T> newNode = new Node<>(element, null);
+        NodeQueue<T> newNode = new NodeQueue<>(element, null);
         if(size() == 0){
             front=newNode;
         }
@@ -89,7 +89,7 @@ public class MyLinkedQueue<T> extends AbstractQueue<T>{
 
     @Override
     public void print() {
-        Node<T> nodeAux= front;
+        NodeQueue<T> nodeAux= front;
         while(nodeAux != null){
             System.out.println(nodeAux.getElement().toString());
             nodeAux=nodeAux.getNext();
