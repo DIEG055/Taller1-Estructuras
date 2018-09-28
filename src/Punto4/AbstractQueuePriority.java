@@ -1,5 +1,13 @@
 package Punto4;
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
 
+/*Esta clase abstrata implementa la interface Queue con prioridad, la cual la obliga a 
+  implementar una serie de metodos. 
+  
+  Ademas en esta clase definimos, el metodo isEmpty(), el cual funcionara 
+  de la misma manera, independiente de la forma que se implemente (arrays o nodos enlazados)
+*/
 public abstract class AbstractQueuePriority<T> implements QueuePriority<T> {
     @Override
     public abstract int size();
@@ -14,7 +22,9 @@ public abstract class AbstractQueuePriority<T> implements QueuePriority<T> {
     public abstract T first();
     
     @Override
-    public abstract boolean isEmpty();
+    public boolean isEmpty(){
+        return (size()==0);
+    }
     
     @Override
     public abstract void clear();
@@ -22,6 +32,5 @@ public abstract class AbstractQueuePriority<T> implements QueuePriority<T> {
     @Override
     public abstract void print();
     
-    @Override
-    public abstract int positionMaxPriority();
+    
 }

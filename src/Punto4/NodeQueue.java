@@ -1,5 +1,8 @@
 package Punto4;
 
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
+
 public class NodeQueue<T> {
     private T element;
     private NodeQueue<T> next;

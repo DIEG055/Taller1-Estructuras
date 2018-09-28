@@ -1,11 +1,21 @@
 package Punto4;
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
+
+/*En esta clase realizamos la implemetacion de una Queue, a traves de nodos 
+  enlazados, para esto heradamos de la clase AbstractQueue, la cual nos proporcionara
+  la implementacion de algunos metodos y nos obligara a implementar otros. 
+    
+  A continuacion se realiza una breve descripcion de la manera en que se implemento
+  cada metodo.
+*/
 
 public class MyLinkedQueue<T> extends AbstractQueue<T>{
-    private NodeQueue<T> front;
-    private NodeQueue<T> back;
+    private NodeQueue<T> front; //Refrencia al inicio de la cola
+    private NodeQueue<T> back;  //Refrencia al final de la cola
 
     
-    
+    //Constructor basico
     public MyLinkedQueue(){
         front=null;
         back=null;
@@ -74,11 +84,6 @@ public class MyLinkedQueue<T> extends AbstractQueue<T>{
         else{
             return front.getElement();
         }
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return (size() == 0);
     }
 
     @Override

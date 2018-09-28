@@ -1,5 +1,6 @@
 package Punto4;
-
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
 
 public class NodePriority<T> {
     private T element;

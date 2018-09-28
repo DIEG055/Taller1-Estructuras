@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package Punto4;
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
 
 /**
  *
- * @author jccas
+ * @author cgilb / jmedinan
  */
 public class Punto4Main {
 
@@ -22,7 +24,7 @@ public class Punto4Main {
         Person p7 = new Person("Antonio", "Santos", 100007);
         Person p8 = new Person("Antonia", "Uribe", 100008);
         Person p9 = new Person("Valentin", "Montoya", 100009);
-        Person p10 = new Person("Valentina", "Orozco", 1000010);
+        Person p10 = new Person("Valentina", "Orozco", 100010);
         
         persons[0]=p1;
         persons[1]=p2;
@@ -45,7 +47,7 @@ public class Punto4Main {
         MyLinkedQueue<Person> colaEntrada = new MyLinkedQueue<>();
         for (int i = 0; i < randomPermutation.length; i++) {
             Person p = persons[randomPermutation[i]];
-            System.out.println(i + " " + p.toString());
+            System.out.println(i + ") " + p.toString());
             //Add person p into queue            
             colaEntrada.enqueue(p);
         }
@@ -60,7 +62,7 @@ public class Punto4Main {
         
         for(int i = 0; i< tamColaEntrada; i++){
             int triage = generateRandomInt(1, 10);
-            System.out.println(i + ") Persona: " + colaEntrada.first() + "  Triage: " + triage);
+            System.out.println(i + ") TRIAGE:" + triage + "  Persona: " + colaEntrada.first());
             colaAtencion.enqueue(colaEntrada.dequeue(), triage);
         }
         
@@ -77,7 +79,8 @@ public class Punto4Main {
         int tamColaAtencion = colaAtencion.size();
         
         for(int i=0; i<tamColaAtencion; i++){
-            System.out.println(i+ ") Persona: " + colaAtencion.dequeue());
+            int trige = colaAtencion.maxPriority();
+            System.out.println(i+ ") TRIGE:" + trige +"  Persona: " + colaAtencion.dequeue());
         }
         
         //Finally, when all persons are enqueued in the priority queue,

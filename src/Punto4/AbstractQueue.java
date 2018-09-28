@@ -1,5 +1,13 @@
 package Punto4;
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
 
+/*Esta clase abstrata implementa la interface Queue, la cual la obliga a 
+  implementar una serie de metodos. 
+  
+  Ademas en esta clase definimos, el metodo isEmpty(), el cual funcionara 
+  de la misma manera, independiente de la forma que se implemente (arrays o nodos enlazados)
+*/
 public abstract class AbstractQueue<T> implements Queue<T>{
     
     @Override
@@ -15,7 +23,9 @@ public abstract class AbstractQueue<T> implements Queue<T>{
     public abstract T first();
     
     @Override
-    public abstract boolean isEmpty();
+    public boolean isEmpty(){
+        return (size() == 0);
+    }
     
     @Override
     public abstract void clear();

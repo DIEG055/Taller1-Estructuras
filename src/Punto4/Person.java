@@ -5,10 +5,9 @@
  */
 package Punto4;
 
-/**
- *
- * @author jccas
- */
+//CAMILO ANDRES GIL BALLEN - cgilb
+//JUAN DIEGO MEDINA NARANJO - jmedinan
+
 class Person {
     private String nombre;
     private String apellido;
@@ -46,6 +45,6 @@ class Person {
     
     @Override
     public String toString(){
-        return nombre + " " + apellido + " " + numDocumento;
+        return numDocumento + " " + nombre + " " + apellido;
     }
 }
